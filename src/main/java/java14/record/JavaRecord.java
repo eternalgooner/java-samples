@@ -8,7 +8,7 @@ public class JavaRecord {
      * New to Java 14 is the 'record' keyword which allows us
      * to create immutable instances of data objects with a lot boiler plate code
      * generated under the hood.
-     * They are ideal for simple data objects not intended to be modified.
+     * They are ideal for simple data carrier objects not intended to be modified.
      * @param args
      */
     public static void main(String[] args) {
