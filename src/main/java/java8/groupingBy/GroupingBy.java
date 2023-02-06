@@ -2,8 +2,10 @@ package java8.groupingBy;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.toSet;
 
 /**
  * The grouping by method in the collectors class allows us to
@@ -31,6 +33,11 @@ public class GroupingBy {
         final Map<String, List<Person>> collect = people.stream()
                 .collect(groupingBy(Person::getCountry));
         System.out.println(collect);
+
+        // we can also change the data structure of the returned type, e.g. Set instead of the default List
+        final Map<String, Set<Person>> collectSet = people.stream()
+                .collect(groupingBy(Person::getCountry, toSet()));
+        System.out.println(collectSet);
 
     }
 }
