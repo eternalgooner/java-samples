@@ -19,7 +19,7 @@ public class CompletableFutureOnlyNeedOneToFinish {
                 longRunningProcess1(),
                 longRunningProcess2(),
                 longRunningProcess3())
-                .thenAccept(obj -> System.out.println("successful completable future completed " + obj.toString()));
+                .thenAccept(obj -> System.out.println(logCurrentThread() + " -- successful completable future completed " + obj.toString()));
 
         Thread.sleep(30000);
         System.out.println(logCurrentThread() + " -- MAIN finished");
