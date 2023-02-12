@@ -29,12 +29,7 @@ public class CompletableFutureHandleException {
     public static CompletableFuture<String> longRunningProcess() {
         return CompletableFuture.supplyAsync(() -> {
             System.out.println(logCurrentThread() + " -- starting longRunningProcess...will take 2 seconds");
-            try {
-                Thread.sleep(2_000);
-                throw new RuntimeException("exception in completable future");
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            throw new RuntimeException("exception in completable future");
         });
     }
 
